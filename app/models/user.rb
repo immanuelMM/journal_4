@@ -5,5 +5,4 @@ class User < ApplicationRecord
 
     has_many :categories
     has_many :categories, through: :task
-    # has_many :tasks, through: :categories
 end
