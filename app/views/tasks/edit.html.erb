@@ -1,0 +1,32 @@
+
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+       <%= link_to show_tasks_path(@category_id,user_id: @user_id) do%>
+      <i class="fas fa-backward"></i>
+    <% end %>       
+        <h1>Edit task
+        
+        </h1>
+            <%= form_with url: tasks_update_path(category_id:@category_id,user_id:@user_id) do |f| %>
+                <div class="form-group">
+                <p> 
+                    <%= f.label :description %> <br/>
+                    <%= f.text_area :description ,class: "form-control", size: "30x10", value: @task_id.description%>
+                </p>
+                <p> 
+                 <p> 
+                    <%= f.label :sched_date_field, "Deadline" %>
+                    <%= f.text_field :completed_at, :class => "form-control", value:@task_id.completed_at %>
+                </p> 
+                <p> 
+                    <%= f.label :sched_date_field, "New Deadline" %>
+                    <%= f.datetime_field :completed_at, :class => "datepicker form-control", value:@task_id.completed_at %>
+                </p>
+                <p> 
+                    <%= f.submit class: "btn btn-primary my-2"%>
+                </p>
+
+            <% end%>
+              </div>
+      </div>
+    </div>

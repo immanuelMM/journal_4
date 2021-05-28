@@ -1,0 +1,52 @@
+<% flash.each do |key, message| %>
+  <div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+    <%= message %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<p>
+  <strong>Username:</strong>
+  <%= @user_id.username %>
+</p>
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="text-center">
+<h1>Categories</h1>
+</div>
+  <h4>Add Category 
+     <%= link_to categories_new_path(@user_id), class: "btn btn-primary" do %>
+     <i class="fas fa-plus"></i>    
+    <%end%></h4> 
+  <div class="table-responsive"> 
+           
+    <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Category name</th>
+      <th colspan="3"></th>
+    </tr>
+    </thead>
+  <tbody>
+      <% if(@category_count == "nil") %>
+            <tr>
+              <td>No Category</td>
+              <td></td>
+            </tr>  
+        <% else %>
+           <% @category.each do |category| %>
+            <tr>
+              <td><%= category.name %></td>
+              <td><%= link_to 'Show',show_tasks_path(category.id,user_id: @user_id)%></td>
+              <td>
+            </tr>
+            
+           <% end %>
+            
+      <% end %>
+  </tbody>
+  </table>
+  </div>
+</div>
+

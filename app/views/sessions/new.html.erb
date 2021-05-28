@@ -1,0 +1,35 @@
+<% flash.each do |key, message| %>
+  <div class="alert <%= flash_class(key) %> alert-dismissible fade show text-center" role="alert">
+    <%= message %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<h5 class="card-title text-center">Sign In</h5>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first" sytle = "" >
+         <i class="fas fa-user"></i>
+      </div>
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+      <%= f.email_field :username, class: 'fadeIn second',  placeholder: "username", type: "text" %>
+
+      <%= f.password_field :password, class: 'fadeIn second', placeholder:"password", type:"password"%>
+
+      <%= f.submit "sign in", class: "fadeIn fourth" %>
+    <% end %>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+      <div class="card1 pb-5">
+        <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="https://i.imgur.com/uNGdWHi.png" class="image"> </div>
+        </div>
+    </div>

@@ -1,0 +1,30 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">      
+        <h1>Create Task</h1>
+            <%= form_with url: create_task_path(@category_id,user_id:@user_id) do |f| %>
+                <div class="form-group">
+                <p> 
+                    <%= f.label :description %> <br/>
+                    <%= f.text_area :description ,class: "form-control", size: "30x10"%>
+                </p>
+                <p>  
+                <p> 
+                    <%= f.label :sched_date_field, "Deadline" %>
+                    <%= f.datetime_field :completed_at, :class => "datepicker form-control"  %>
+                </p>
+                
+                <p> 
+                    <%= f.hidden_field :category_id ,class: "form-control", size: "30x10", value: @category_id.id%>
+                </p>
+                <p> 
+                    <%= f.submit class: "btn btn-primary my-2"%>
+                </p>
+
+            <% end%>
+              </div>
+      </div>
+    </div>
+  </section>
+</main>

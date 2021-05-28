@@ -1,0 +1,26 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+           <h1>Edit Category </h1>
+            <%= form_with url: categories_update_path(@category,user_id:@user_id) do |f| %>
+            <div class="form-group">
+                <% @categories.each do |category| %>
+                <p> 
+                    <%= f.label :name %> <br/>
+                    <%= f.text_field :name ,class: "form-control", value: category.name %>
+                </p>
+                <p> 
+                    <%= f.label :description %> <br/>
+                    <%= f.text_area :description,class: "form-control", value: category.description %>
+                </p>
+                <p> 
+                    <%= f.submit class: "btn btn-primary" %>
+                </p>
+            </div>
+                <% end %>
+            <% end %>
+      </div>
+    </div>
+  </section>
+</main>

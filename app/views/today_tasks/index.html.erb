@@ -1,0 +1,25 @@
+<div class="container page-todo bootstrap snippets bootdeys">
+  <div class="task-list">
+<h1>Task</h1>
+<div class="priority high"><span>high priority</span></div>
+  <div class="table-responsive">          
+    <table class="table table-striped task high">
+    <thead>
+      <%# <%= link_to 'Back', categories_path, class: "btn btn-primary" %>  
+      <th >Category</th>
+      <th>Task</th>
+      <th>Deadline</th>
+    </thead>
+  <tbody>
+    <% @today_task.each do |task| %>
+      <tr >
+        <td></td>
+        <td><%= task.description %></td>
+        <td class="btn btn-danger"><%= task.completed_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+  </div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+
+<%= link_to show_tasks_path(@category_id,user_id: @user_id) do%>
+    <i class="fas fa-backward"></i>
+<% end %>   
+ <div class="card text-center">
+  <div class="card-header">
+    <%=  @category_id.name%>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Task</h5>
+    <p class="card-text"> <h1> <%= @task_id.description%></h1></p>
+    <a href="#" class="btn btn-primary"><%= @task_id.completed%>Click if done</a>
+  </div>
+  <div class="card-footer text-muted">
+    Deadline:
+    <%= @task_id.completed_at%>
+  </div>
+</div>
