@@ -38,7 +38,10 @@
            <% @category.each do |category| %>
             <tr>
               <td><%= category.name %></td>
-              <td><%= link_to 'Show',show_tasks_path(category.id,user_id: @user_id)%></td>
+              <td><%= link_to show_tasks_path(category.id,user_id: @user_id) , do %>
+                    Tasks <i class="fa fa-tasks" aria-hidden="true"></i>
+                  <% end %>
+              </td>
               <td>
             </tr>
             
